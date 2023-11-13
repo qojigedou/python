@@ -1,3 +1,9 @@
+#Napisać program, który czyta podane jako zewnętrzne argumenty liczby naturalne, 
+#a następnie każdą rozkłada na czynniki pierwsze (co polega na zapisaniu dowolnej 
+#liczby naturalnej za pomocą iloczynu liczb pierwszych). 
+#Wymagany jest format wyjściowy w postaci a1^k1*a2^k2*...*a3, jeśli ki==1 to opuszczamy 
+#wykładnik potęgi.
+
 import sys
 import math
 

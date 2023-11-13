@@ -1,3 +1,5 @@
+# Narysować odwrócony pusty trójkąt z gwiazdek o zadanej długości nieparzystej,
+
 rows = int(input("Enter number of rows: "))
 
 for i in range(rows):

@@ -1,3 +1,7 @@
+#Napisać program rysujący prostokąt zbudowany z małych kratek. 
+#Należy zbudować pełny string, a potem go wypisać.
+
+
 print("Enter the wigth of the rectange: ")
 rect_width = int(input())
 

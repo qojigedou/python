@@ -1,3 +1,13 @@
+# Dla dwóch sekwencji znaleźć:
+
+#     listę elementów występujących jednocześnie w obu sekwencjach (część wspólną, 
+#bez powtórzeń)
+#     listę wszystkich elementów z obu sekwencji (sumę, bez powtórzeń)
+
+# Zademonstrować na przykładach.
+
+# P.s. można doczytać sobie o typie set
+
 first_set = {2.0, 5, 5, "Set", (2, 3, 4)}
 second_set = {3.0, 5, 7.0, "Set", "set", (2, 3, 4)}
 
