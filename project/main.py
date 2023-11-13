@@ -53,13 +53,13 @@ class Planet:
     
     def update(self, num):
         self.line.set_data_3d(self.x_list[:num], self.y_list[:num], self.z_list[:num])
-        self.point.set_data_3d(self.x_list[num], self.y_list[num], self.z_list[num])
+        self.point.set_data_3d([self.x_list[num]], [self.y_list[num]], [self.z_list[num]])
         self.text.set_position((self.x_list[num], self.y_list[num], self.z_list[num]))
 
 
 
 earth = Planet(29780, 5.972e24, 1, "Earth")
-mars = Planet(24100, 6.39e30, 1.52, "Mars")
+mars = Planet(24100, 6.39e23, 1.52, "Mars")
 mercury = Planet(47900, 3.285e23, 0.39, "Mercury")
 venus = Planet(35000, 4.867e24, 0.72, "Venus")
 
@@ -122,7 +122,7 @@ def update(num,data_dict,vis_dict):
     dataset_sun              = data_dict['s']
     line_s,point_s,text_s   = vis_dict['s'][0],vis_dict['s'][1],vis_dict['s'][2]
     line_s.set_data_3d(dataset_sun[0][:num],dataset_sun[1][:num],dataset_sun[2][:num])
-    point_s.set_data_3d(dataset_sun[0][num],dataset_sun[1][num],dataset_sun[2][num])
+    point_s.set_data_3d([dataset_sun[0][num]],[dataset_sun[1][num]],[dataset_sun[2][num]])
     text_s.set_position((dataset_sun[0][num],dataset_sun[1][num],dataset_sun[2][num]))
 
     earth.update(num)
