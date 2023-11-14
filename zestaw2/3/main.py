@@ -21,9 +21,9 @@ word = len(word_list)
 num = sum(c.isdigit() for c in str)
 ch = sum(i.isalpha() for i in str)
 
-print("Words in string:", word, ",", "characters in string:", ch, ",", "numbers in string:", num, end="\n")
+print(f"Words in string: {word} , characters in string: {ch} , numbers in string: {num}\n")
 
 print("\n")
 
 collection = Counter(str)
-print("The count of occurences of characters in a string:", collection, end="\n")
+print(f"The count of occurences of characters in a string: {collection} \n")
