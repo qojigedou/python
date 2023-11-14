@@ -4,32 +4,57 @@
 #Wymagany jest format wyjściowy w postaci a1^k1*a2^k2*...*a3, jeśli ki==1 to opuszczamy 
 #wykładnik potęgi.
 
+
 import sys
 import math
 
-argv = sys.argv[1:]
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return False
+    return True
 
-for i in argv:
-	#print(int(i))
-	i = int(i)
-	k = 2
-	pierw = math.sqrt(i)
-	string = ""
-	while i > 1 and k <= pierw:
-		count = 0
-		while i % k == 0:
-			count += 1
-			i//=k
-		if count != 0:
-			string += str(k)
-			if count > 1:
-				string += "^" + str(count)
-			string += '*'
-		k = k + 1
-	if i>1:
-		string += str(i)+"*"
-	print(i, "=", string[:-1])
+def factorize(num):
+    if is_prime(num):
+        return str(num)
+    
+    factors = []
+    k = 2
+    pierw = int(math.sqrt(num))
+    
+    while num > 1 and k <= pierw:
+        count = 0
+        while num % k == 0:
+            count += 1
+            num //= k
+        if count != 0:
+            factors.append((k, count))
+        k += 1
+    
+    if num > 1:
+        factors.append((num, 1))
+    
+    return factors
 
+def format_output(factors):
+    result = ""
+    for factor, count in factors:
+        result += str(factor)
+        if count > 1:
+            result += "^" + str(count)
+        result += '*'
+    return result[:-1]
 
+def main():
+    argv = sys.argv[1:]
+    
+    for arg in argv:
+        num = int(arg)
+        factors = factorize(num)
+        result = format_output(factors)
+        print(f"{num} = {result}")
 
-
+if __name__ == "__main__":
+    main()
